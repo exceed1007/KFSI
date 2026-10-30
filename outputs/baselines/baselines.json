@@ -1,0 +1,208 @@
+{
+ "binaryinferno": {
+  "method": "binaryinferno",
+  "micro_P": 0.29809648358035457,
+  "micro_R": 0.787070784577019,
+  "micro_F1": 0.4324181904410603,
+  "macro_F1": 0.5996625,
+  "rows": [
+   {
+    "protocol": "bacnet",
+    "messages": 100,
+    "P": 0.8554,
+    "R": 0.7636,
+    "F1": 0.8069
+   },
+   {
+    "protocol": "DCERPC",
+    "messages": 318,
+    "P": 0.2336,
+    "R": 0.8261,
+    "F1": 0.3642
+   },
+   {
+    "protocol": "dnp3",
+    "messages": 117,
+    "P": 0.3835,
+    "R": 0.9715,
+    "F1": 0.5499
+   },
+   {
+    "protocol": "hart_ip",
+    "messages": 49,
+    "P": 0.7582,
+    "R": 0.7709,
+    "F1": 0.7645
+   },
+   {
+    "protocol": "IEC104",
+    "messages": 63,
+    "P": 0.6201,
+    "R": 0.8605,
+    "F1": 0.7208
+   },
+   {
+    "protocol": "modbus",
+    "messages": 64,
+    "P": 0.2327,
+    "R": 1.0,
+    "F1": 0.3776
+   },
+   {
+    "protocol": "MQTT",
+    "messages": 97,
+    "P": 0.876,
+    "R": 0.9855,
+    "F1": 0.9275
+   },
+   {
+    "protocol": "S7comm",
+    "messages": 302,
+    "P": 0.1873,
+    "R": 0.6041,
+    "F1": 0.2859
+   }
+  ],
+  "params": {
+   "thr": 0.05
+  }
+ },
+ "pft": {
+  "method": "pft",
+  "micro_P": 0.38928927169391225,
+  "micro_R": 0.6372530212929215,
+  "micro_F1": 0.48332302767977303,
+  "macro_F1": 0.5453625,
+  "rows": [
+   {
+    "protocol": "bacnet",
+    "messages": 100,
+    "P": 0.8782,
+    "R": 0.51,
+    "F1": 0.6453
+   },
+   {
+    "protocol": "DCERPC",
+    "messages": 318,
+    "P": 0.375,
+    "R": 0.8261,
+    "F1": 0.5158
+   },
+   {
+    "protocol": "dnp3",
+    "messages": 117,
+    "P": 0.4198,
+    "R": 0.5761,
+    "F1": 0.4857
+   },
+   {
+    "protocol": "hart_ip",
+    "messages": 49,
+    "P": 0.7679,
+    "R": 0.6806,
+    "F1": 0.7216
+   },
+   {
+    "protocol": "IEC104",
+    "messages": 63,
+    "P": 0.5714,
+    "R": 0.2791,
+    "F1": 0.375
+   },
+   {
+    "protocol": "modbus",
+    "messages": 64,
+    "P": 0.4113,
+    "R": 1.0,
+    "F1": 0.5829
+   },
+   {
+    "protocol": "MQTT",
+    "messages": 97,
+    "P": 1.0,
+    "R": 0.564,
+    "F1": 0.7212
+   },
+   {
+    "protocol": "S7comm",
+    "messages": 302,
+    "P": 0.2325,
+    "R": 0.4899,
+    "F1": 0.3154
+   }
+  ],
+  "params": {
+   "merge_mi": 0.9
+  }
+ },
+ "reinpro": {
+  "method": "reinpro",
+  "micro_P": 0.4722324383964693,
+  "micro_R": 0.49261461730289663,
+  "micro_F1": 0.48220824335743123,
+  "macro_F1": 0.599925,
+  "rows": [
+   {
+    "protocol": "bacnet",
+    "messages": 100,
+    "P": 0.8748,
+    "R": 0.3461,
+    "F1": 0.496
+   },
+   {
+    "protocol": "DCERPC",
+    "messages": 318,
+    "P": 0.4149,
+    "R": 0.5652,
+    "F1": 0.4785
+   },
+   {
+    "protocol": "dnp3",
+    "messages": 117,
+    "P": 0.8662,
+    "R": 0.5389,
+    "F1": 0.6644
+   },
+   {
+    "protocol": "hart_ip",
+    "messages": 49,
+    "P": 0.946,
+    "R": 0.5569,
+    "F1": 0.7011
+   },
+   {
+    "protocol": "IEC104",
+    "messages": 63,
+    "P": 0.8137,
+    "R": 0.4147,
+    "F1": 0.5494
+   },
+   {
+    "protocol": "modbus",
+    "messages": 64,
+    "P": 0.6019,
+    "R": 0.6,
+    "F1": 0.6009
+   },
+   {
+    "protocol": "MQTT",
+    "messages": 97,
+    "P": 1.0,
+    "R": 0.9855,
+    "F1": 0.9927
+   },
+   {
+    "protocol": "S7comm",
+    "messages": 302,
+    "P": 0.2697,
+    "R": 0.3829,
+    "F1": 0.3164
+   }
+  ],
+  "params": {
+   "min_gain": 0.15,
+   "det_jump": 0.45,
+   "ent_jump": 0.45
+  }
+ }
+}

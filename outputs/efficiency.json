@@ -1,0 +1,102 @@
+{
+ "rows": [
+  {
+   "protocol": "bacnet",
+   "messages": 100,
+   "bytes": 2989,
+   "kfsi_s": 0.275,
+   "kfsi_kb": 191.2,
+   "m2rs_s": 2.418,
+   "nemesys_s": 0.001,
+   "netzob_s": 0.048,
+   "binaryinferno_s": 0.004
+  },
+  {
+   "protocol": "DCERPC",
+   "messages": 318,
+   "bytes": 34556,
+   "kfsi_s": 1.871,
+   "kfsi_kb": 5721.1,
+   "m2rs_s": 0.302,
+   "nemesys_s": 0.003,
+   "netzob_s": 0.412,
+   "binaryinferno_s": 0.021
+  },
+  {
+   "protocol": "dnp3",
+   "messages": 117,
+   "bytes": 3172,
+   "kfsi_s": 3.673,
+   "kfsi_kb": 238.9,
+   "m2rs_s": 1.272,
+   "nemesys_s": 0.001,
+   "netzob_s": 0.029,
+   "binaryinferno_s": 0.008
+  },
+  {
+   "protocol": "hart_ip",
+   "messages": 49,
+   "bytes": 1169,
+   "kfsi_s": 1.813,
+   "kfsi_kb": 126.3,
+   "m2rs_s": 1.15,
+   "nemesys_s": 0.001,
+   "netzob_s": 0.021,
+   "binaryinferno_s": 0.005
+  },
+  {
+   "protocol": "IEC104",
+   "messages": 63,
+   "bytes": 1014,
+   "kfsi_s": 1.697,
+   "kfsi_kb": 194.8,
+   "m2rs_s": 0.245,
+   "nemesys_s": 0.001,
+   "netzob_s": 0.007,
+   "binaryinferno_s": 0.009
+  },
+  {
+   "protocol": "modbus",
+   "messages": 64,
+   "bytes": 3463,
+   "kfsi_s": 0.947,
+   "kfsi_kb": 397.2,
+   "m2rs_s": 1.199,
+   "nemesys_s": 0.003,
+   "netzob_s": 0.058,
+   "binaryinferno_s": 0.02
+  },
+  {
+   "protocol": "MQTT",
+   "messages": 97,
+   "bytes": 2654,
+   "kfsi_s": 0.225,
+   "kfsi_kb": 121.6,
+   "m2rs_s": 0.025,
+   "nemesys_s": 0.001,
+   "netzob_s": 0.019,
+   "binaryinferno_s": 0.005
+  },
+  {
+   "protocol": "S7comm",
+   "messages": 302,
+   "bytes": 14560,
+   "kfsi_s": 1.748,
+   "kfsi_kb": 1241.5,
+   "m2rs_s": 5.115,
+   "nemesys_s": 0.005,
+   "netzob_s": 0.113,
+   "binaryinferno_s": 0.032
+  }
+ ],
+ "total": {
+  "kfsi_s": 12.249,
+  "m2rs_s": 11.726,
+  "nemesys_s": 0.016,
+  "netzob_s": 0.707,
+  "binaryinferno_s": 0.104,
+  "messages": 1110,
+  "bytes": 63577,
+  "kfsi_kb": 1029.1
+ }
+}

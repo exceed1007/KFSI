@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# 中间产物：临时脚本、排版校样与归档语料
+outputs/tmp/
+outputs/*.pdf
+outputs/eval/
+outputs/eval_lr/
+data/_archive_old_train/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.swp
+
+# 旧版遗留模型（不参与本文实验）
+models/mmfi/boundary_scorer.joblib
+models/gap_model_leaked_backup.json

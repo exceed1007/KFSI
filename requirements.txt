@@ -1,0 +1,3 @@
+numpy>=1.24
+matplotlib>=3.6
+scikit-learn>=1.3   # 可选：仅在拟合权重时使用，缺失时自动降级为先验权重

@@ -1,0 +1,120 @@
+{
+ "binaryinferno|all": {
+  "params": {
+   "thr": 0.15
+  },
+  "P": 0.5115,
+  "R": 0.4929,
+  "F1": 0.502,
+  "macro": 0.5543,
+  "per": {
+   "DCERPC": 0.5793,
+   "IEC104": 0.5926,
+   "MQTT": 0.8333,
+   "S7comm": 0.2092,
+   "bacnet": 0.6972,
+   "hart_ip": 0.554,
+   "modbus": 0.4233,
+   "dnp3": 0.5458
+  }
+ },
+ "binaryinferno|test": {
+  "params": {
+   "thr": 0.15
+  },
+  "P": 0.517,
+  "R": 0.4833,
+  "F1": 0.4996,
+  "macro": 0.5338,
+  "per": {
+   "DCERPC": 0.5793,
+   "IEC104": 0.5324,
+   "MQTT": 0.8333,
+   "S7comm": 0.304,
+   "bacnet": 0.5976,
+   "hart_ip": 0.4088,
+   "modbus": 0.4848,
+   "dnp3": 0.5299
+  }
+ },
+ "pft|all": {
+  "params": {
+   "merge_mi": 0.7
+  },
+  "P": 0.4584,
+  "R": 0.584,
+  "F1": 0.5137,
+  "macro": 0.5873,
+  "per": {
+   "DCERPC": 0.5167,
+   "IEC104": 0.3729,
+   "MQTT": 0.7273,
+   "S7comm": 0.2904,
+   "bacnet": 0.6428,
+   "hart_ip": 0.7863,
+   "modbus": 0.7353,
+   "dnp3": 0.6264
+  }
+ },
+ "pft|test": {
+  "params": {
+   "merge_mi": 0.7
+  },
+  "P": 0.4457,
+  "R": 0.6271,
+  "F1": 0.5211,
+  "macro": 0.6008,
+  "per": {
+   "DCERPC": 0.5167,
+   "IEC104": 0.3729,
+   "MQTT": 0.7273,
+   "S7comm": 0.3957,
+   "bacnet": 0.6576,
+   "hart_ip": 0.7863,
+   "modbus": 0.8097,
+   "dnp3": 0.5404
+  }
+ },
+ "reinpro|all": {
+  "params": {
+   "min_gain": 0.04,
+   "det_jump": 0.45,
+   "ent_jump": 0.25
+  },
+  "P": 0.4931,
+  "R": 0.5322,
+  "F1": 0.5119,
+  "macro": 0.647,
+  "per": {
+   "DCERPC": 0.4785,
+   "IEC104": 0.6667,
+   "MQTT": 1.0,
+   "S7comm": 0.3811,
+   "bacnet": 0.4932,
+   "hart_ip": 0.723,
+   "modbus": 0.8097,
+   "dnp3": 0.624
+  }
+ },
+ "reinpro|test": {
+  "params": {
+   "min_gain": 0.04,
+   "det_jump": 0.45,
+   "ent_jump": 0.25
+  },
+  "P": 0.5075,
+  "R": 0.5312,
+  "F1": 0.5191,
+  "macro": 0.634,
+  "per": {
+   "DCERPC": 0.4785,
+   "IEC104": 0.5738,
+   "MQTT": 1.0,
+   "S7comm": 0.4284,
+   "bacnet": 0.4747,
+   "hart_ip": 0.6667,
+   "modbus": 0.8205,
+   "dnp3": 0.6291
+  }
+ }
+}
