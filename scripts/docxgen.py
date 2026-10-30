@@ -190,36 +190,44 @@ def _style(sid, name, *, size=24, bold=False, ascii_font='Times New Roman',
             f'<w:rPr>{rpr}</w:rPr></w:style>')
 
 
-def build_styles() -> str:
+def build_styles(english: bool = False) -> str:
+    ea = 'Times New Roman' if english else '宋体'
+    ei = 'Times New Roman' if english else '黑体'
+    sp = {'Body': 360, 'Abs': 320, 'Eq': 360, 'Cap': 300,
+          'Txt': 300, 'TxtL': 300, 'Ref': 300, 'Note': 340} if english else {}
     items = [
-        _style('Title', 'Title', size=44, bold=True, ea_font='黑体',
+        _style('Title', 'Title', size=44, bold=True, ea_font=ei,
                align='center', before=0, after=240, line=360, outline=0),
-        _style('H1', 'heading 1', size=30, bold=True, ea_font='黑体',
+        _style('H1', 'heading 1', size=30, bold=True, ea_font=ei,
                before=240, after=120, line=360, outline=0, keep_next=True),
-        _style('H2', 'heading 2', size=26, bold=True, ea_font='黑体',
+        _style('H2', 'heading 2', size=26, bold=True, ea_font=ei,
                before=180, after=90, line=360, outline=1, keep_next=True),
-        _style('H3', 'heading 3', size=24, bold=True, ea_font='黑体',
+        _style('H3', 'heading 3', size=24, bold=True, ea_font=ei,
                before=120, after=60, line=360, outline=2, keep_next=True),
         _style('Body', 'Body Text', size=24, align='both',
-               indent_chars=200, line=300),
-        _style('Abs', 'Abstract', size=21, align='both', indent_chars=200,
-               line=290),
+               indent_chars=(0 if english else 200),
+               line=sp.get('Body', 300)),
+        _style('Abs', 'Abstract', size=21, align='both',
+               indent_chars=(0 if english else 200),
+               line=sp.get('Abs', 290)),
         _style('Eq', 'Equation', size=24, align='center', before=60,
-               after=60, line=320),
-        _style('Cap', 'Caption', size=21, bold=True, ea_font='黑体',
-               align='center', before=60, after=60, line=280),
-        _style('Txt', 'Table Text', size=21, align='center', line=260),
-        _style('TxtL', 'Table Text Left', size=21, align='left', line=260),
+               after=60, line=sp.get('Eq', 320)),
+        _style('Cap', 'Caption', size=21, bold=True, ea_font=ei,
+               align='center', before=60, after=60, line=sp.get('Cap', 280)),
+        _style('Txt', 'Table Text', size=21, align='center',
+               line=sp.get('Txt', 260)),
+        _style('TxtL', 'Table Text Left', size=21, align='left',
+               line=sp.get('TxtL', 260)),
         _style('Ref', 'Reference', size=21, align='left', hanging=200,
-               line=280),
-        _style('Note', 'Note', size=21, align='both', line=300),
+               line=sp.get('Ref', 280)),
+        _style('Note', 'Note', size=21, align='both', line=sp.get('Note', 300)),
         _style('Fig', 'Figure', size=21, align='center', before=120,
                after=60, line=240),
     ]
     return ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
             f'<w:styles {NS}><w:docDefaults><w:rPrDefault><w:rPr>'
             '<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" '
-            'w:eastAsia="宋体" w:cs="Times New Roman"/>'
+            f'w:eastAsia="{ea}" w:cs="Times New Roman"/>'
             '<w:sz w:val="24"/><w:szCs w:val="24"/>'
             '</w:rPr></w:rPrDefault>'
             '<w:pPrDefault><w:pPr><w:widowControl w:val="0"/>'
@@ -229,11 +237,12 @@ def build_styles() -> str:
 
 # ----------------------------------------------------------------------
 class DocxBuilder:
-    def __init__(self):
+    def __init__(self, english=False):
         self.blocks = []
         self._tbl_id = 0
         self.media = []      # [(文件名, 字节)]
         self._img_id = 0
+        self.english = english
 
     # -- 基本块 --------------------------------------------------------
     def _p(self, text, style='Body', bold_prefix=None):
@@ -304,8 +313,11 @@ class DocxBuilder:
         """居中排版的 Word 原生公式，编号右对齐（制表位定位）。"""
         tabs = ('<w:tabs><w:tab w:val="center" w:pos="4535"/>'
                 '<w:tab w:val="right" w:pos="9070"/></w:tabs>')
-        num = (f'<w:r><w:t xml:space="preserve">（{number}）</w:t></w:r>'
-               if number else '')
+        if number:
+            tag = f'({number})' if self.english else f'\uff08{number}\uff09'
+            num = (f'<w:r><w:t xml:space="preserve">{tag}</w:t></w:r>')
+        else:
+            num = ''
         self.blocks.append(
             f'<w:p><w:pPr><w:pStyle w:val="Eq"/>{tabs}'
             '<w:ind w:firstLine="0" w:left="0"/></w:pPr>'
@@ -483,7 +495,7 @@ class DocxBuilder:
             z.writestr('[Content_Types].xml', ct)
             z.writestr('_rels/.rels', rels)
             z.writestr('word/document.xml', doc)
-            z.writestr('word/styles.xml', build_styles())
+            z.writestr('word/styles.xml', build_styles(self.english))
             z.writestr('word/_rels/document.xml.rels', drels)
             z.writestr('docProps/core.xml', core)
             z.writestr('docProps/app.xml', app)
