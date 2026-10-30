@@ -1,5 +1,7 @@
 # KFSI — 关键字段识别与辅助的二进制协议字段边界推断
 
+仓库地址：<https://github.com/exceed1007/KFSI>
+
 代码与数据：*Field Boundary Inference for Binary Protocol Security Analysis:
 Key-Field Identification and Recursive Splitting*（投稿 *Computers & Security*）。
 
